@@ -1,107 +1,75 @@
 # Modified Early Warning Score (MEWS) Calculator
 
-This repository contains a Python implementation of the Modified Early Warning Score (MEWS) calculator. The MEWS is a scoring system used in healthcare to identify patients who are at risk of deteriorating experiencing a medical emergency. This README provides an overview of the MEWS, explains its meaning and applications, and provides step-by-step instructions on how run and use the code.
-
 ## Table of Contents
 - [Introduction](#introduction)
-- [Mean and Applications](#meaning-and-applications)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Example](#example)
-- [Contributing](#contributing)
-- [Contact](#contact)
+- [MEWS: Meaning and Applications](#mews-meaning-and-applications)
+- [Running the Code](#running-the-code)
+- [Understanding the Code](#understanding-the-code)
+- [Follow Me](#follow-me)
 
 ## Introduction
-The Modified Early Warning Score (MEWS) is a clinical tool used to assess the severity of a patient's condition based their vital signs. It assigns scores to different physiological parameters such as heart rate, respiratory rate, systolic blood pressure, body temperature, and level of consciousness. By summing up these scores, healthcare professionals can quickly evaluate a patient's overall condition and identify those who may require immediate intervention or closer monitoring.
+Welcome to the MEWS Calculator! This Python code calculates the Modified Early Warning Score (MEWS) for patients based on their vital signs. The MEWS is a scoring system used in healthcare to identify patients who are risk of deteriorating or experiencing a medical emergency. By assessing various vital signs, healthcare professionals can quickly evaluate a patient's condition and take appropriate actions.
 
-## Meaning and Applications
-TheWS is designed to provide an early warning of clinical deterioration in patients. It helps healthcare providers identify individuals who are risk of developing complications or experiencing a medical emergency. By regularly monitoring and calculating the MEWS score, medical teams can intervene promptly and provide appropriate care to prevent adverse outcomes.
+## MEWS: Meaning and Applications
+The Modified Early Warning Score (MEWS) is a widely used tool in healthcare settings to monitor and assess patients' clinical status. It helps healthcare professionals identify patients who may require immediate attention or intervention. The MEWS takes into account several vital signs, including heart rate, respiratory rate, systolic blood pressure, body temperature, and level of consciousness. Each vital sign is assigned a score based on predefined thresholds, and the scores are summed up to calculate the overall MEWS score.
 
- MEWS score is particularly useful in hospital settings, including emergency departments, intensive care units, and general wards. It enables healthcare professionals to prioritize patient care, allocate resources effectively, and make informed decisions about interventions, such as escalating care, initiating treatment, or transferring patients to higher levels of care.
+The MEWS score provides objective measure of a patient's condition and serves an early warning system for potential deterioration. It helps healthcare providers prioritize care, initiate timely interventions, and escalate the level of care if necessary. By using the MEWS, healthcare teams can improve patient outcomes, reduce adverse events, and enhance patient safety.
 
-## Getting Started
-To use the MEWS calculator, follow the steps below.
+## Running the Code
+To use the MEWS Calculator, follow these steps:
 
-### Prerequisites
-- Python 3.x installed on your system
+1. Install Python: Make sure you have Python installed on your computer. If not, download and install the latest version of Python from the official website (https://www.python.org).
 
-### Installation
-1. Clone this repository to your local machine or download the code as a ZIP file.
-2. Open a terminal or command prompt and navigate to the project directory.
-3. Install the required dependencies by running the following command:
+2. Clone the Repository: Clone this GitHub repository to your local machine using the following command:
+   ```
+   git clone https://github.com/your-username/mews-calculator.git
+   ```
+
+3. Navigate to the Repository: Open a terminal or command prompt and navigate to the cloned repository's directory:
+   ```
+   cd mews-calculator
+   ```
+
+4. Install Dependencies: Install the required dependencies by running the following command:
    ```
    pip install -r requirements.txt
    ```
 
-## Usage
-To calculate the MEWS score for a patient, you need to provide their vital signs: heart rate, respiratory rate, systolic blood pressure, body temperature, and level of consciousness. The `calculate_mews` function in the `mews` file takes these parameters as input and returns the corresponding MEWS score.
+5. Run the Code: Execute the Python script using the following command:
+   ```
+   python mews_calculator.py
+   ```
 
-The MEWS score calculated based on the following criteria:
+6. Enter Vital Signs: You will be prompted to enter the patient's vital signs, including heart rate, respiratory rate, systolic blood pressure, body temperature, and level of consciousness. Follow the instructions and provide the values accordingly.
 
-| Vital Sign              | Score |
-|-------------------------|-------|
-| Heart Rate (HR)         |       |
-| &nbsp;&nbsp;≥ 130       | 3     |
-| &nbsp;&nbsp;110-129     | 2     |
-| &nbsp;&nbsp;100-109     | 1     |
-| Respiratory Rate (RR)   |       |
-| &nbsp;&nbsp;≥ 30        | 3     |
-| &nbsp;&nbsp;21-29       | 2     |
-| &nbsp;&nbsp;9-20        | 1     |
-| Systolic Blood Pressure (SBP) | |
-| &nbsp;&nbsp;≤ 70        | 2     |
-| &nbsp;&nbsp;71-100      | 1     |
-| Body Temperature        |       |
-| &nbsp;&nbsp;≥ 39        | 2     |
-| &nbsp;&nbsp;38-38.9     | 1     |
-| Level of Consciousness (LOC) |   |
-| &nbsp;&nbsp;< 15        | 3     |
-| &nbsp;&nbsp;10-14       | 2     |
-| &nbsp;&nbsp;13          | 1     |
+7. View theWS Score: After entering all the vital signs, the code will calculate the MEWS score based on the provided values and display it on the screen.
 
-To calculate the MEWS score, call the `calculate_mews` function and pass the patient's vital signs arguments. The function will return the MEWS score as an integer.
+## Understanding the Code
+The MEWS Calculator code is written in Python and follows a simple structure. Here's an overview of the main components:
 
-## Example
-Here's an example usage of the MEWS calculator:
+- `calculate_mews(hr,, sbp, temp, loc)`: This function takes the vital sign values as input and calculates the MEWS score based on predefined thresholds. It assigns scores each vital sign and sums them up to obtain the finalWS score.
 
-```python
-from mews import calculate_mews
+- Heart Rate Score: The heart rate (hr) is evaluated against specific thresholds, and corresponding scores are assigned.
 
-heart_rate = 120
-respiratory_rate = 22
-systolic_blood_pressure = 90
-body_temperature = 37.5
-level_of_consciousness = 14
+- Respiratory Rate Score: The respiratory rate (rr) is assessed against predefined thresholds, and scores are assigned accordingly.
 
-m_score = calculate_mews    heart_rate, respiratory_rate, systolic_blood_pressure,
-    body_temperature, level_of_consciousness
-)
+- Systolic Blood Pressure Score: The systolic blood pressure (sbp) compared to predefined thresholds, and scores are assigned based on the results.
 
-print("MEWS Score:", mews_score)
-```
+- Body Temperature Score: The body temperature (temp) checked against predefined thresholds, and scores are assigned accordingly.
 
-In this example, the MEWS score is calculated for a patient with the following vital signs- Heart Rate: 120 bpm
-- Respiratory Rate: 22 breaths per minute
-- Systolic Blood Pressure: 90 mmHg
-- Body Temperature: 37.5°C
-- Level of Consciousness: 14
+- Level of Consciousness Score: The level of consciousness (loc) is evaluated against specific thresholds, and scores are assigned based on the results.
 
- output will be:
-``MEWS Score: 2
-```
+- The function returns the calculated MEWS score.
 
-Based on the MEWS score, healthcare professionals can interpret the patient's condition and take appropriate actions.
+- Example Usage: An example usage of the `calculate_mews` function is provided, demonstrating how to calculate the MEWS score for a patient with given vital sign values.
 
-## Contributing
-Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+Feel free to explore the code, modify the thresholds, or adapt it to your specific requirements.
 
-## Contact
-For more information or questions, feel free to reach out:
+## Follow Me
+Thank you for using the MEWS Calculator! If you find this tool helpful, consider following on LinkedIn and Twitter for more updates and resources related healthcare and technology.
 
 LinkedIn: [Reza Eghbal](https://www.linkedin.com/in/mreghbal)
 
 Twitter: [Reza Eghbal](https://twitter.com/mreghbal)
 
-Thank you for your interest in this project! Don't forget to follow me on LinkedIn and Twitter for more updates and healthcare-related content.
+Your support and feedback are greatly appreciated!
